@@ -412,14 +412,15 @@ if section == "Hero":
 
         st.markdown("""
         <div class='hero-badge'>
-            🧠 AI-POWERED INTELLIGENCE PLATFORM
+            🧠 CUSTOMER INTELLIGENCE AT SCALE
         </div>
         """, unsafe_allow_html=True)
 
         st.markdown("""
         <div class='hero-big-title'>
+            AI-Powered<br>
             Customer Intelligence<br>
-            at Scale
+            Platform
         </div>
         """, unsafe_allow_html=True)
 
