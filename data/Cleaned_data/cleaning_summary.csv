@@ -1,9 +1,0 @@
-Metric,Value
-Initial_Row_Count,500000.0
-Final_Row_Count,491705.0
-Removed_Row_Count,8295.0
-Removed_Row_Ratio,1.659
-Duplicate_Count,0.0
-Negative_NumberOfPurchases_Removed,394.0
-Negative_TotalSpent_Removed,394.0
-Negative_LastPurchaseDaysAgo_Removed,7907.0
