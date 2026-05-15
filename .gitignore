@@ -57,3 +57,4 @@ data/
 # Cache
 .cache/
 *.cache
+src/old_codes/
