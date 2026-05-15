@@ -1,0 +1,13 @@
+Column,Negative_Count,Negative_Ratio
+Age,0,0.0
+AnnualIncome,0,0.0
+NumberOfPurchases,394,0.0788
+TimeSpentOnWebsite,8472,1.6944000000000001
+CustomerTenureYears,11145,2.229
+LastPurchaseDaysAgo,7907,1.5814000000000001
+LoyaltyProgram,0,0.0
+DiscountsAvailed,0,0.0
+SessionCount,0,0.0
+CustomerSatisfaction,0,0.0
+PurchaseStatus,0,0.0
+TotalSpent,394,0.0788

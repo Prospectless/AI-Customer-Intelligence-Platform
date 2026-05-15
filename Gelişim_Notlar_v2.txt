@@ -1,0 +1,478 @@
+#########################################################
+
+# 11. AI CUSTOMER INTELLIGENCE LAYER (YENİ)
+
+#########################################################
+
+Amaç:
+- Analitik çıktıları operasyonel müşteri zekasına dönüştürmek
+- Segment → insight → action pipeline oluşturmak
+- Explainable AI + automation entegrasyonu sağlamak
+
+Pipeline Yapısı:
+
+RFM
+↓
+KMeans
+↓
+Hierarchical Clustering
+↓
+Churn Prediction
+↓
+LLM Persona Engine
+↓
+Campaign Intelligence
+↓
+n8n Automation Layer
+
+#########################################################
+
+# SEGMENT INTELLIGENCE ENGINE
+
+#########################################################
+
+Yeni hedef:
+Her segment için behavioral enrichment üretmek.
+
+Hesaplanacak alanlar:
+- Ortalama Recency
+- Ortalama Frequency
+- Ortalama Monetary
+- Purchase Rate
+- Churn Exposure
+- Dominant Product Category
+- Dominant Region
+- Dominant Age Group
+- Dominant Device
+- Discount Affinity
+- Loyalty Affinity
+- Risk Level
+- Recommended Campaign Action
+
+Amaç:
+- Segmentleri sadece skor bazlı değil,
+  davranışsal ve operasyonel olarak açıklayabilmek
+- LLM promptlarını güçlendirmek
+- Action Layer için akıllı audience üretmek
+
+Yeni Çıktılar:
+- rfm_segment_intelligence.csv
+- kmeans_segment_intelligence.csv
+- hc_segment_intelligence.csv
+
+#########################################################
+
+# BUSINESS IMPACT LAYER
+
+#########################################################
+
+Eklenecek KPI'lar:
+- Revenue at Risk
+- Recoverable Revenue
+- Potential Retention Gain
+- High Value Customer Exposure
+- Campaign ROI Projection
+
+Amaç:
+- Teknik modeli business impact ile ilişkilendirmek
+- Executive-level dashboard üretmek
+
+#########################################################
+
+# CLUSTER VALIDATION & NAMING STRATEGY
+
+#########################################################
+
+Cluster isimlendirme mantığı:
+
+KMeans / HC clusterları:
+- Ortalama Recency
+- Ortalama Frequency
+- Ortalama Monetary
+- Purchase Rate
+- Churn davranışı
+
+baz alınarak business semantic'leri ile isimlendirildi.
+
+Örnek:
+- High Value Active
+- Active Buyers
+- Dormant Customers
+- Critical Retention Risk
+
+Amaç:
+- Teknik cluster ID’lerini
+  business-readable hale getirmek
+
+#########################################################
+
+# AI PERSONA & CAMPAIGN ENGINE (GÜNCEL)
+
+#########################################################
+
+LLM girişleri güçlendirildi:
+
+Persona generation sırasında:
+- segment metrikleri
+- dominant kategori
+- dominant bölge
+- discount affinity
+- yaş grubu
+- cihaz davranışı
+- churn exposure
+
+LLM promptuna dahil edilecek.
+
+Yeni hedef:
+- Persona
+- Campaign Message
+- CRM Strategy
+- Retention Suggestion
+- Upsell Opportunity
+
+çıktılarını aynı anda üretmek.
+
+#########################################################
+
+# ACTION & AUTOMATION LAYER (GÜNCEL)
+
+#########################################################
+
+Yeni yapı:
+Insight → Audience → Campaign → Automation
+
+Smart Audience örnekleri:
+- Immediate Retention
+- VIP Win-back
+- Early Churn Warning
+- Dormant Reactivation
+- Discount Sensitive Recovery
+
+Action Layer Özellikleri:
+- CSV export
+- JSON export
+- n8n-ready payload generation
+- Campaign recommendation
+- Priority scoring
+
+n8n hedef entegrasyonu:
+- marketing@fufighters.com
+- webhook tabanlı otomasyon
+- segment bazlı campaign trigger
+
+Payload içeriği:
+- Selected Segment
+- Customer IDs
+- Campaign Priority
+- AI Campaign Text
+- Recommended Action
+
+#########################################################
+
+# STREAMLIT DASHBOARD V2
+
+#########################################################
+
+Yeni dashboard mimarisi:
+
+1. Hero / Overview
+2. Business Problem
+3. RFM Intelligence
+4. Behavioral Clustering
+5. Churn Intelligence
+6. AI Persona Engine
+7. Campaign Action Layer
+
+Dashboard yaklaşımı:
+- Dark AI-style cinematic UI
+- Precomputed intelligence outputs
+- Explainable AI visualization
+- Operational customer intelligence flow
+
+#########################################################
+
+# GÜNCEL PROJE VİZYONU
+
+#########################################################
+
+Proje artık klasik bir ML dashboard değil.
+
+Hedef:
+Raw customer behavior datasını,
+AI destekli explainable customer intelligence sistemine dönüştürmek.
+
+Sistem:
+- segmentation
+- unsupervised learning
+- churn prediction
+- generative AI
+- campaign orchestration
+- automation integration
+
+katmanlarını uçtan uca birleştirmektedir.
+
+#########################################################
+
+# 12. PRESENTATION_APP.PY (SUNUM ODAKLI DASHBOARD)
+
+#########################################################
+
+Amaç:
+- Mevcut detaylı analyst dashboard’u bozmadan,
+  15 dakikalık final sunuma uygun ayrı bir Streamlit uygulaması oluşturmak.
+- Teknik analizleri executive-level hikâyeye dönüştürmek.
+- Projeyi klasik dashboard yerine AI-powered customer intelligence platformu gibi sunmak.
+
+Dosya:
+- presentation_app.py
+
+Yaklaşım:
+- app.py detaylı analiz dashboard’u olarak korunur.
+- presentation_app.py sunum/demo odaklı ayrı arayüz olarak tasarlanır.
+
+Sayfa Akışı:
+1. Hero
+2. Problem
+3. RFM
+4. Clustering
+5. Churn
+6. Persona
+7. Action
+
+#########################################################
+
+# HERO SAYFASI
+
+#########################################################
+
+Amaç:
+- Projenin tek ekranda genel özetini vermek.
+- AI-powered customer intelligence platformu hissi oluşturmak.
+
+İçerik:
+- Toplam müşteri sayısı
+- Purchase rate
+- RFM segment sayısı
+- Churn model AUC skoru
+- Customer Behavior Matrix
+
+Görsel Mantık:
+- Recency × Monetary scatter plot
+- Bubble size: Frequency
+- Renk: RFM Segment
+
+Mesaj:
+- Segmentasyon, churn prediction, persona engine ve campaign automation tek platformda birleştirildi.
+
+#########################################################
+
+# PROBLEM SAYFASI
+
+#########################################################
+
+Amaç:
+- Business problemini anlatmak.
+- Neden böyle bir customer intelligence sistemine ihtiyaç olduğunu göstermek.
+
+Problem Başlıkları:
+- Invisible churn signals
+- Generic CRM campaigns
+- No behavioral intelligence
+- Fragmented customer data
+
+Görsel:
+- Customer risk landscape
+- LastPurchaseDaysAgo × TotalSpent
+- PurchaseStatus renk ayrımı
+
+Mesaj:
+- Sorun veri eksikliği değil, davranışsal veriyi aksiyona çevirememe problemidir.
+
+#########################################################
+
+# RFM INTELLIGENCE SAYFASI
+
+#########################################################
+
+Amaç:
+- Müşterileri açıklanabilir davranış segmentlerine ayırmak.
+
+İçerik:
+- RFM segment dağılımı
+- Seçilen segment metrikleri
+- Segment insight
+- Loyalty Growth Journey
+- Churn Risk Journey
+- RFM score heatmap
+
+Journey Yapısı:
+- Loyalty Growth:
+  new_customers → promising → potential_loyalists → champions
+
+- Churn Risk:
+  need_attention → about_to_sleep → at_risk → hibernating
+
+Mesaj:
+- RFM, müşteri davranışını business-readable segmentlere dönüştürür.
+
+#########################################################
+
+# CLUSTERING SAYFASI
+
+#########################################################
+
+Amaç:
+- RFM segmentasyonunun matematiksel olarak desteklenip desteklenmediğini göstermek.
+
+İçerik:
+- KMeans optimal cluster sayısı: 6
+- KMeans silhouette score: 0.379
+- HC validation: 50K sample, structure confirmed
+- Cluster map
+- Cluster intelligence panel
+- RFM × KMeans validation table
+
+Kullanılan Mantık:
+- RFM = rule-based segmentation
+- KMeans = behavioral pattern discovery
+- HC = validation layer
+
+Mesaj:
+- Segmentler keyfi değil; doğal müşteri davranış patternleriyle destekleniyor.
+
+#########################################################
+
+# CHURN INTELLIGENCE SAYFASI
+
+#########################################################
+
+Amaç:
+- Churn riskini müşteri kaybedilmeden önce tahmin etmek.
+
+İçerik:
+- Best model
+- AUC score
+- High risk customer count
+- Top churn driver
+- Feature importance
+- Explainable AI insight
+- Model comparison
+
+Ana Bulgular:
+- En güçlü churn driver: LastPurchaseDaysAgo / Recency
+- Recency, EDA bulgularıyla tutarlı şekilde dominant feature oldu.
+
+Mesaj:
+- Churn prediction kaybedilmiş müşteriyi bulmak değil,
+  risk sinyalini erken yakalamaktır.
+
+#########################################################
+
+# AI PERSONA ENGINE SAYFASI
+
+#########################################################
+
+Amaç:
+- Analitik segmentleri marketing ve CRM ekiplerinin anlayacağı persona diline çevirmek.
+
+İçerik:
+- Segment seçimi
+- Segment metrikleri
+- LLM tarafından üretilen persona
+- AI marketing recommendation
+- Prompt template expander
+
+Kullanılan çıktı:
+- data/Persona_Output/segment_personas.csv
+- data/Persona_Output/{segment}_persona.txt
+
+LLM Yaklaşımı:
+- Cohere API ile persona üretildi.
+- Çıktılar önceden üretilerek CSV/TXT olarak Streamlit’e okutuldu.
+- Sunum güvenliği için canlı API çağrısı yerine precomputed output tercih edildi.
+
+Mesaj:
+- Segmentler sadece teknik grup değil, business action’a dönüşebilen müşteri personlarıdır.
+
+#########################################################
+
+# CAMPAIGN ACTION LAYER SAYFASI
+
+#########################################################
+
+Amaç:
+- Segmentasyon, churn ve persona çıktılarını operasyonel kampanya listelerine dönüştürmek.
+
+İçerik:
+- Smart Action Audiences
+- Campaign message preview
+- n8n payload preview
+- Campaign-ready customer table
+- CSV export
+- JSON export
+
+Smart Audience Örnekleri:
+- Immediate Retention
+- VIP Win-back
+- Early Churn Warning
+- Discount Sensitive Recovery
+- Dormant Reactivation
+
+Filtre Mantığı:
+- Immediate Retention:
+  at_risk / cant_loose + yüksek recency
+
+- VIP Win-back:
+  cant_loose + yüksek monetary
+
+- Early Churn Warning:
+  about_to_sleep / need_attention + orta-yüksek recency
+
+- Discount Sensitive Recovery:
+  Discount_Oriented + yüksek recency
+
+- Dormant Reactivation:
+  hibernating / about_to_sleep + yüksek recency
+
+n8n Çıktısı:
+- Selected audience
+- Customer count
+- Target segments
+- Campaign type
+- Priority
+- Campaign message
+- Customer list CSV
+- Payload JSON
+
+Mesaj:
+- Sistem sadece analiz yapmıyor; kampanya otomasyonuna hazır çıktı üretiyor.
+
+#########################################################
+
+# PRESENTATION_APP.PY GENEL KATKISI
+
+#########################################################
+
+presentation_app.py ile proje:
+- analyst dashboard’dan executive demo dashboard’a dönüştürüldü.
+- teknik çıktılar hikâyeli sunum akışına bağlandı.
+- her sayfa tek bir business mesaj verecek şekilde düzenlendi.
+- Streamlit UI dark/cinematic AI platform görünümüne taşındı.
+- final sunum için 15 dakikalık akış oluşturuldu.
+
+Yeni Sunum Hikayesi:
+Hero
+↓
+Problem
+↓
+RFM Intelligence
+↓
+Clustering Validation
+↓
+Churn Prediction
+↓
+AI Persona
+↓
+Campaign Automation
+
+#########################################################

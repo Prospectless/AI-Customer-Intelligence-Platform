@@ -1,0 +1,72 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+.env
+.env.local
+*.log
+
+# Data - Large CSV files (NOT in git, download separately)
+data/*.csv
+data/raw/
+data/*_Output/*.csv
+data/Eda_Output/
+data/RFM_Output/
+data/KMeans_Output/
+data/HC_Output/
+data/Churn_Output/
+data/Persona_Output/
+data/Intelligence_Output/
+data/Business_KPI_Output/
+data/Presentation_Prep/
+
+# Except keep these small reference files
+!data/README.md
+
+# Notebooks (optional)
+.ipynb_checkpoints/
+*.ipynb
+
+# Cache
+.cache/
+*.cache
