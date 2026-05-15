@@ -46,22 +46,9 @@ Thumbs.db
 .env.local
 *.log
 
-# Data - Large CSV files (NOT in git, download separately)
-data/*.csv
-data/raw/
-data/*_Output/*.csv
-data/Eda_Output/
-data/RFM_Output/
-data/KMeans_Output/
-data/HC_Output/
-data/Churn_Output/
-data/Persona_Output/
-data/Intelligence_Output/
-data/Business_KPI_Output/
-data/Presentation_Prep/
-
-# Except keep these small reference files
-!data/README.md
+# ALL CSV files - Download from Kaggle instead
+*.csv
+data/
 
 # Notebooks (optional)
 .ipynb_checkpoints/
